@@ -4,6 +4,7 @@
   "description": "",
   "scripts": {
     "start": "lux serve",
+    "dev": "nf run lux serve",
     "test": "lux test"
   },
   "author": "",
@@ -11,6 +12,7 @@
   "dependencies": {
     "babel-core": "6.17.0",
     "babel-preset-lux": "2.0.1",
+    "bcryptjs": "^2.4.3",
     "knex": "0.12.6",
     "lux-framework": "1.1.7",
     "lux-jwt": "^0.2.1",
@@ -19,5 +21,8 @@
   },
   "engines": {
     "node": ">= 6.0"
+  },
+  "devDependencies": {
+    "foreman": "^2.0.0"
   }
 }
