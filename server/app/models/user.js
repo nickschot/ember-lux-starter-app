@@ -1,13 +1,13 @@
 import { Model } from 'lux-framework';
 
 class User extends Model {
-    params = [
-        'email',
-
-        'firstName',
-        'suffix',
-        'lastName'
-    ]
+    static scopes = {
+        findByEmail(email) {
+            return this.first().where({
+                email: email
+            });
+        }
+    };
 }
 
 export default User;

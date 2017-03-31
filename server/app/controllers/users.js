@@ -1,7 +1,7 @@
 import { Controller } from 'lux-framework';
 
 class UsersController extends Controller {
-    attributes = [
+    params = [
         'email',
 
         'firstName',

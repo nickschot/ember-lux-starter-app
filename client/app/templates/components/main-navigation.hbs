@@ -1,0 +1,35 @@
+<nav class="navbar navbar-toggleable-sm navbar-light bg-faded fixed-top">
+  <div class="container">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#main-navigation" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">MyApp</a>
+
+    <div class="collapse navbar-collapse" id="main-navigation">
+      <ul class="navbar-nav mr-auto">
+        {{#active-link class="nav-item"}}{{#link-to 'index' class='nav-link'}}Home{{/link-to}}{{/active-link}}
+        {{#if session.isAuthenticated}}
+          <li class="nav-item">
+            <a class="nav-link" href="#">Users</a>
+          </li>
+        {{/if}}
+      </ul>
+      <ul class="navbar-nav">
+        {{#if session.isAuthenticated}}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
+              {{sessionAccount.user.fullName}}
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">My profile</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" {{action 'logout'}} href="#">Logout</a>
+            </div>
+          </li>
+        {{else}}
+          <li class="nav-item"><a {{action 'login'}} class="nav-link" href="#">Login</a></li>
+        {{/if}}
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -6,7 +6,7 @@ import { secret } from 'app/utils/token';
 class ApplicationController extends Controller {
     beforeAction = [
         unless({
-            path: ['/auth/login', '/auth/token-refresh'],
+            path: ['/auth/token-auth', '/auth/token-refresh'],
             method: ['OPTIONS']
         }, jwt({secret: secret}))
     ];

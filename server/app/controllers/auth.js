@@ -10,18 +10,44 @@ class AuthController extends Controller {
         'data'
     ];
 
-    login({
+    async login({
         params: {
             data: {
                 attributes: {
-                    username,
+                    identification,
                     password,
                     rememberMe
                 }
             }
         }
     }) {
-        return User.authenticate(username, password, rememberMe);
+
+        const user = await User.findByEmail(identification);
+
+        if (user) {
+            if(user.password){
+                const isAuthenticated = await comparePassword(password, user.password);
+
+                if (isAuthenticated && user) {
+                    let data = {
+                        userId: user.id
+                    };
+
+                    const token = await getNewToken(data, rememberMe);
+
+                    if (token) {
+                        return {
+                            token: token
+                        };
+                    }
+                }
+            } else {
+                //TODO: no password has been set, allow for password recovery?
+            }
+        }
+
+        //Unauthorized
+        return 401;
     }
 
     async tokenRefresh ({
@@ -37,7 +63,7 @@ class AuthController extends Controller {
             const oldPayload = verify(token, secret);
 
             const newToken = await getNewToken({
-                user: oldPayload.user
+                userId: oldPayload.userId
             });
 
             if (newToken) {

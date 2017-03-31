@@ -1,0 +1,13 @@
+@import 'bootstrap';
+
+$body-bg: #EEE;
+$body-padding-top: 3*$grid-gutter-width-base;
+
+body {
+  background-color: $body-bg;
+  padding-top: $body-padding-top;
+}
+.height-window {
+  margin-top: -$body-padding-top;
+  height: 100vh;
+}

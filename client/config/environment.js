@@ -29,6 +29,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.host = 'http://localhost:4000'
   }
 
   if (environment === 'test') {
@@ -45,6 +46,19 @@ module.exports = function(environment) {
   if (environment === 'production') {
 
   }
+
+  ENV['ember-simple-auth'] = {
+    authenticationRoute: 'index',
+    authorizer: 'authorizer:token'
+  };
+  ENV['ember-simple-auth-token'] = {
+    serverTokenEndpoint: ENV.host + '/auth/token-auth',
+    serverTokenRefreshEndpoint: ENV.host + '/auth/token-refresh',
+    refreshAccessTokens: true,
+    refreshLeeway: 300,
+    identificationField: 'identification',
+    passwordField: 'password'
+  };
 
   return ENV;
 };

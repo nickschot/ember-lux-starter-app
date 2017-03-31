@@ -1,11 +1,33 @@
 export default {
-  logging: {
-    level: 'DEBUG',
-    format: 'text',
-    enabled: true,
+    server: {
+        cors: {
+            origin: '*',
+            enabled: true,
 
-    filter: {
-      params: []
+            headers: [
+                'Accept',
+                'Content-Type',
+                'Authorization'
+            ],
+
+            methods: [
+                'GET',
+                'POST',
+                'PATCH',
+                'DELETE',
+                'HEAD',
+                'OPTIONS'
+            ]
+        }
+    },
+
+    logging: {
+        level: 'DEBUG',
+        format: 'text',
+        enabled: true,
+
+        filter: {
+            params: []
+        }
     }
-  }
 };

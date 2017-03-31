@@ -1,5 +1,5 @@
 import DS from 'ember-data';
-import { computed } from 'ember';
+import Ember from 'ember';
 
 export default DS.Model.extend({
   email: DS.attr('string'),
@@ -8,7 +8,7 @@ export default DS.Model.extend({
   suffix: DS.attr('string'),
   lastName: DS.attr('string'),
 
-  fullName: computed('firstName', 'suffix', 'lastName', function(){
+  fullName: Ember.computed('firstName', 'suffix', 'lastName', function(){
     return `${this.get('firstName')} ${this.get('suffix') ? this.get('suffix') + '' : ''} ${this.get('lastName')}`
   })
 });

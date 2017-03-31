@@ -1,0 +1,16 @@
+{{#if errorMessage}}
+  <div class="alert alert-danger">
+    <strong>Login failed:</strong> <code>{{errorMessage}}</code>
+  </div>
+{{/if}}
+
+{{! login form; the fields must be named "identification" and "password"; the controller action is "authenticate" }}
+<form {{action 'authenticateWithJWT' on='submit'}}>
+  <div class="form-group">
+      {{input value=identification placeholder="Email..." class="form-control" type="text"}}
+  </div>
+  <div class="form-group">
+      {{input value=password placeholder="Password..." class="form-control" type="password"}}
+  </div>
+  <button type="submit" class="btn btn-primary">Login</button>
+</form>
