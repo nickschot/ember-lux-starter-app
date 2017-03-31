@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+    <div class="card">
+      <h2 class="card-header">
+        My profile
+      </h2>
+      <div class="card-block">
+        <div class="form-group">
+          <label for="profile-email">Email</label>
+          {{input type="text" class="form-control" value=model.email id="profile-email"}}
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-4">
+            <label for="profile-first-name">First name</label>
+            {{input type="text" class="form-control" value=model.firstName id="profile-first-name"}}
+          </div>
+          <div class="col-sm-3">
+            <label for="profile-suffix">Suffix</label>
+            {{input type="text" class="form-control" value=model.suffix id="profile-suffix"}}
+          </div>
+          <div class="col-sm-5">
+            <label for="profile-last-name">Last name</label>
+            {{input type="text" class="form-control" value=model.lastName id="profile-last-name"}}
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        {{#if model.hasDirtyAttributes}}
+          <button class="btn btn-primary" {{action 'save'}}>Save</button>
+        {{else}}
+          <button class="btn btn-primary" disabled="disabled">Saved</button>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</div>
