@@ -1,0 +1,21 @@
+{
+  "name": "server",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "start": "lux serve",
+    "test": "lux test"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "babel-core": "6.17.0",
+    "babel-preset-lux": "2.0.1",
+    "knex": "0.12.6",
+    "lux-framework": "1.1.7",
+    "sqlite3": "3.1.8"
+  },
+  "engines": {
+    "node": ">= 6.0"
+  }
+}
