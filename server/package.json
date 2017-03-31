@@ -13,6 +13,8 @@
     "babel-preset-lux": "2.0.1",
     "knex": "0.12.6",
     "lux-framework": "1.1.7",
+    "lux-jwt": "^0.2.1",
+    "lux-unless": "^0.1.1",
     "sqlite3": "3.1.8"
   },
   "engines": {
