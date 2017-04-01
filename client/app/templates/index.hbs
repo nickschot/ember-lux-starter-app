@@ -4,11 +4,17 @@
     <p>
       This app serves as basic boilerplate for an <b>Ember</b> + <b>Lux</b> application.
     </p>
+    <h3>Authentication</h3>
     <p>
-      Basic authentication via JWT is provided.
+      Basic authentication via JWT is provided. By default a token is valid for 30 minutes or 7 days when &quot;remember me&quot; is ticked on login. These values can be customized in <code>server/app/utils/constants</code>.
     </p>
+    <h3>Models</h3>
     <p>
-      A single <code>User</code> model with basic attributes is present.
+      A single <code>User</code> model with basic attributes is present in both the server and the client.
+    </p>
+    <h3>Semantic UI</h3>
+    <p>
+      Semantic UI is available in this package. It is only partially imported by default. You can change which components you want to import in <code>app/styles/semantic-ui.less</code>.
     </p>
     <h4 class="ui dividing header"></h4>
     {{#if session.isAuthenticated}}

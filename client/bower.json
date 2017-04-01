@@ -2,5 +2,8 @@
   "name": "ember-client",
   "dependencies": {
     "semantic-ui": "^2.2.10"
+  },
+  "scripts": {
+    "postinstall": "cp ./bower_components/semantic-ui/src/theme.config.example ./bower_components/semantic-ui/src/theme.config"
   }
 }

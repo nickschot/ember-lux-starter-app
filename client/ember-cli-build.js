@@ -8,6 +8,20 @@ module.exports = function(defaults) {
       enabled: EmberApp.env() !== 'production',
       extensions: ['js']
     },
+    lessOptions: {
+      paths: [
+        'bower_components/semantic-ui'
+      ]
+    },
+    SemanticUI: {
+      // These flags allow you do turn on or off auto imports for Semantic UI
+      import: {
+        css: false,
+        javascript: true,
+        image: true,
+        fonts: true
+      }
+    },
     'ember-cli-babel': {
       includePolyfill: true
     }
