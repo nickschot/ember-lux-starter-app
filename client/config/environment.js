@@ -28,7 +28,7 @@ module.exports = function(environment) {
       import: {
         css: false,
         javascript: true,
-        image: true,
+        images: false,
         fonts: true
       },
     },

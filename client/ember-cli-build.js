@@ -13,12 +13,14 @@ module.exports = function(defaults) {
         'bower_components/semantic-ui'
       ]
     },
+
+    //TODO: these are broken in semantic-ui 2.0.1, change values in config/environment too
     SemanticUI: {
       // These flags allow you do turn on or off auto imports for Semantic UI
       import: {
         css: false,
         javascript: true,
-        image: false,
+        images: false,
         fonts: true
       }
     },
