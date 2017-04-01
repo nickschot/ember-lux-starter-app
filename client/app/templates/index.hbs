@@ -1,6 +1,16 @@
 <div class="ui text container">
   <h2 class="ui header">Ember + Lux boilerplate</h2>
   <div class="ui segment">
+    <p>
+      This app serves as basic boilerplate for an <b>Ember</b> + <b>Lux</b> application.
+    </p>
+    <p>
+      Basic authentication via JWT is provided.
+    </p>
+    <p>
+      A single <code>User</code> model with basic attributes is present.
+    </p>
+    <h4 class="ui dividing header"></h4>
     {{#if session.isAuthenticated}}
       <p>
         You are now logged in <i>{{sessionAccount.user.firstName}}</i>!
