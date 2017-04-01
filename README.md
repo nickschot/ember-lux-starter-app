@@ -1,6 +1,6 @@
 # Ember + Lux boilerplate
 
-This app serves as basic boilerplate for an [Ember](https://emberjs.com) + [Lux](httsp://github.com/postlight/lux) application.
+This app serves as basic boilerplate for an [Ember](https://emberjs.com) + [Lux](https://github.com/postlight/lux) application.
 
 ## Features
 ### Authentication
@@ -35,4 +35,4 @@ You can now visit the application by going to <http://localhost:4200>.
 
 ---
 
-For further documentation please consult the [Ember](https://emberjs.com) and [Lux](httsp://github.com/postlight/lux) websites.
+For further documentation please consult the [Ember](https://emberjs.com) and [Lux](https://github.com/postlight/lux) websites.
