@@ -1,12 +1,12 @@
-@import 'bootstrap-custom';
-@import 'variables';
-
 body {
-  background-color: $body-bg;
-  padding-top: $body-padding-top;
+  background-color: #EEE;
+
+  > div {
+    padding-top: 7em;
+    padding-bottom: 7em;
+  }
 }
 
-.height-window {
-  margin-top: -$body-padding-top;
-  height: 100vh;
+.login.column {
+  max-width: 450px;
 }
