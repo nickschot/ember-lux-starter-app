@@ -18,7 +18,7 @@ module.exports = function(defaults) {
       import: {
         css: false,
         javascript: true,
-        image: true,
+        image: false,
         fonts: true
       }
     },
