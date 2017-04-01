@@ -4,13 +4,13 @@ This app serves as basic boilerplate for an [Ember](https://emberjs.com) + [Lux]
 
 ## Features
 ### Authentication
-Basic authentication via JWT is provided. By default a token is valid for 30 minutes or 7 days when "remember me" is ticked on login. These values can be customized in server/app/utils/constants.
+Basic authentication via [JWT](https://jwt.io) is provided. [Ember-simple-auth](https://github.com/simplabs/ember-simple-auth) and [ember-simple-auth-token](https://github.com/jpadilla/ember-simple-auth-token) are used in the client. By default a token is valid for 30 minutes or 7 days when "remember me" is ticked on login. These values can be customized in `server/app/utils/constants`.
 
 ### Models
 A single User model with basic attributes is present in both the server and the client.
 
 ### Semantic UI
-Semantic UI is available in this package. It is only partially imported by default. You can change which components you want to import in app/styles/semantic-ui.less.
+Semantic UI is available in this package. It is only partially imported by default to keep the file size down. You can change which components you want to import in app/styles/semantic-ui.less.
 
 ---
 
