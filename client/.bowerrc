@@ -1,4 +1,7 @@
 {
   "directory": "bower_components",
-  "analytics": false
+  "analytics": false,
+  "scripts": {
+    "postinstall": "npm run reload-theme-config"
+  }
 }
