@@ -1,35 +1,21 @@
-<nav class="navbar navbar-toggleable-sm navbar-light bg-faded fixed-top">
-  <div class="container">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#main-navigation" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand" href="#">MyApp</a>
+<div class="ui container">
+  <div class="item"><i class="large grey cubes icon"></i>MyApp</div>
 
-    <div class="collapse navbar-collapse" id="main-navigation">
-      <ul class="navbar-nav mr-auto">
-        {{#active-link class="nav-item"}}{{#link-to 'index' class='nav-link'}}Home{{/link-to}}{{/active-link}}
-        {{#if session.isAuthenticated}}
-          <li class="nav-item">
-            <a class="nav-link" href="#">Users</a>
-          </li>
-        {{/if}}
-      </ul>
-      <ul class="navbar-nav">
-        {{#if session.isAuthenticated}}
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
-              {{sessionAccount.user.fullName}}
-            </a>
-            <div class="dropdown-menu">
-              {{#link-to 'profile' class="dropdown-item" href="#"}}My profile{{/link-to}}
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" {{action 'logout'}} href="#">Logout</a>
-            </div>
-          </li>
-        {{else}}
-          <li class="nav-item"><a {{action 'login'}} class="nav-link" href="#">Login</a></li>
-        {{/if}}
-      </ul>
-    </div>
+  {{#link-to 'index' class='item'}}Home{{/link-to}}
+
+  <div class="right menu">
+    {{#if session.isAuthenticated}}
+      {{#ui-dropdown class='item' as |execute|}}
+        <i class="circular teal user icon"></i>
+        {{sessionAccount.user.fullName}}
+        <i class="dropdown icon"></i>
+        <div class="menu">
+          {{#link-to 'profile' class='item'}}My profile{{/link-to}}
+          <a class="item" {{action 'logout'}}>Logout</a>
+        </div>
+      {{/ui-dropdown}}
+    {{else}}
+      {{#link-to 'login' class='item'}}Login{{/link-to}}
+    {{/if}}
   </div>
-</nav>
+</div>

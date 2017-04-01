@@ -1,27 +1,33 @@
-{{#if errorMessage}}
-  <div class="alert alert-danger">
-    <strong>Login failed:</strong> <code>{{errorMessage}}</code>
-  </div>
-{{/if}}
-
 {{! login form; the fields must be named "identification" and "password"; the controller action is "authenticate" }}
-<form {{action 'authenticateWithJWT' on='submit'}}>
-  <div class="form-group">
-      {{input value=identification placeholder="Email..." class="form-control" type="text"}}
-  </div>
-  <div class="form-group">
-      {{input value=password placeholder="Password..." class="form-control" type="password"}}
-  </div>
-  <div class="form-group row">
-    <div class="col-6">
-      <div class="form-check">
-        <label class="form-check-label">
-          {{input checked=rememberMe class="form-check-input" type="checkbox"}} Remember me
-        </label>
+<form class="ui large form {{if errorMessage 'error'}}" {{action 'authenticateWithJWT' on='submit'}}>
+  <div class="ui stacked segment">
+    <div class="field">
+      <div class="ui left icon input">
+        <i class="user icon"></i>
+        {{input value=identification placeholder="E-mail address" type="text"}}
       </div>
     </div>
-    <div class="col-6">
-      <button type="submit" class="btn btn-primary btn-block">Login</button>
+    <div class="field">
+      <div class="ui left icon input">
+        <i class="lock icon"></i>
+        {{input value=password placeholder="Password" type="password"}}
+      </div>
+    </div>
+    <div class="ui two fields">
+      <div class="field">
+        <button class="ui fluid large teal submit button" type="submit">Login</button>
+      </div>
+      <div class="field">
+        {{ui-checkbox class="toggle" label="Remember me" checked=rememberMe onChange=(action (mut rememberMe))}}
+      </div>
     </div>
   </div>
+
+  {{#if errorMessage}}
+    <div class="ui error message">
+        <p>
+          <b>Login failed:</b> {{errorMessage}}
+        </p>
+    </div>
+  {{/if}}
 </form>

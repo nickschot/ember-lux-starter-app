@@ -20,7 +20,18 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    }
+    },
+
+    //TODO: this is temporarily here due to a bug in semantic-ui-ember 2.0.1
+    SemanticUI: {
+      // These flags allow you do turn on or off auto imports for Semantic UI
+      import: {
+        css: false,
+        javascript: true,
+        image: true,
+        fonts: true
+      },
+    },
   };
 
   if (environment === 'development') {

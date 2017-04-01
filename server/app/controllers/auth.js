@@ -3,7 +3,8 @@ import { verify } from 'lux-jwt';
 import { comparePassword, hashPassword, testPasswordStrength } from 'app/utils/password';
 
 import User from 'app/models/user';
-import { getNewToken, secret } from "../utils/token";
+import { getNewToken } from 'app/utils/token';
+import { TokenConfig } from 'app/utils/constants';
 
 class AuthController extends Controller {
     query = [
@@ -60,7 +61,7 @@ class AuthController extends Controller {
         }
     }) {
         try {
-            const oldPayload = verify(token, secret);
+            const oldPayload = verify(token, TokenConfig.secret);
 
             const newToken = await getNewToken({
                 userId: oldPayload.userId

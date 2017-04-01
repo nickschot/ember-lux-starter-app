@@ -1,9 +1,31 @@
-<div class="row align-items-center height-window">
-  <div class="col col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
-    <div class="card">
-      <h2 class="card-header h5">Login</h2>
-      <div class="card-block">
-        {{login-form}}
+<div class="ui middle aligned center aligned grid">
+  <div class="login column">
+    <h2 class="ui teal image header">
+      <i class="massive square cubes icon teal"></i>
+      <div class="content">
+        Log-in to your account
+      </div>
+    </h2>
+    {{login-form}}
+
+    <div class="ui message">
+      <p>
+        You can sign in using the following credentials:
+      </p>
+
+      <div class="ui list">
+        <div class="item">
+          <i class="user icon"></i>
+          <div class="content">
+            mail@example.com
+          </div>
+        </div>
+        <div class="item">
+          <i class="lock icon"></i>
+          <div class="content">
+            correct horse battery staple
+          </div>
+        </div>
       </div>
     </div>
   </div>

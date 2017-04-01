@@ -5,10 +5,6 @@ export default Ember.Component.extend({
   sessionAccount: Ember.inject.service('session-account'),
 
   actions: {
-    login() {
-      this.sendAction('onLogin');
-    },
-
     logout() {
       this.get('session').invalidate();
     }

@@ -1,0 +1,20 @@
+@import "semantic-ui";
+
+body {
+  background-color: #EEE;
+
+  > div {
+    padding-top: 7em;
+    padding-bottom: 7em;
+  }
+}
+
+.login.column {
+  max-width: 450px;
+}
+
+@media only screen and (min-width: 768px) {
+  .ui.menu:not(.secondary):not(.text):not(.tabular):not(.borderless) > .container > .menu.right:not(.borderless):last-child {
+    border-right: 1px solid rgba(34, 36, 38, .1);
+  }
+}
