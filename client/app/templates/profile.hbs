@@ -1,6 +1,6 @@
 <div class="ui container text">
   <h2>My profile</h2>
-  <div class="ui segment">
+  <div class="ui attached segment">
     <form class="ui form">
       <div class="ui grid">
         <div class="six wide column">
@@ -49,15 +49,15 @@
         </div>
       </div>
 
-      <h4 class="ui dividing header"></h4>
+      <div class="ui section divider"></div>
+
       <div class="eight wide field">
         <label for="profile-current-password">Current password</label>
         {{input type="password" class="form-control" id="profile-current-password"}}
       </div>
     </form>
-
-    <h4 class="ui dividing header"></h4>
-
+  </div>
+  <div class="ui bottom attached block header">
     {{#if model.hasDirtyAttributes}}
       <button class="ui primary button" {{action 'save'}}>Save</button>
     {{else}}
