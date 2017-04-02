@@ -11,7 +11,7 @@ class AuthController extends Controller {
         'data'
     ];
 
-    async login({
+    async tokenAuth({
         params: {
             data: {
                 attributes: {
@@ -22,7 +22,6 @@ class AuthController extends Controller {
             }
         }
     }) {
-
         const user = await User.findByEmail(identification);
 
         if (user) {
@@ -47,7 +46,6 @@ class AuthController extends Controller {
             }
         }
 
-        //Unauthorized
         return 401;
     }
 
@@ -96,11 +94,7 @@ class AuthController extends Controller {
             userObj.password = await hashPassword(newPassword);
             let success = await userObj.save();
 
-            if(success){
-                return 204;
-            } else {
-                return 500;
-            }
+            return success ? 204 : 500;
         } else {
             // old password didn't match or new password not strong enough
             return 422;
