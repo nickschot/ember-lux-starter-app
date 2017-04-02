@@ -10,7 +10,7 @@ Basic authentication via [JWT](https://jwt.io) is provided. [Ember-simple-auth](
 A single User model with basic attributes is present in both the server and the client.
 
 ### Semantic UI
-Semantic UI is available in this package. It is only partially imported by default to keep the file size down. You can change which components you want to import in app/styles/semantic-ui.less.
+[Semantic UI](https://semantic-ui.com/) is available in this package. It is only partially imported by default to keep the file size down. You can change which components you want to import in app/styles/semantic-ui.less.
 
 ---
 
