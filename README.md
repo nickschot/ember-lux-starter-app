@@ -1,4 +1,4 @@
-# Ember + Lux boilerplate
+# Ember + Lux Starter App
 
 This app serves as basic boilerplate for an [Ember](https://emberjs.com) + [Lux](https://github.com/postlight/lux) application.
 
