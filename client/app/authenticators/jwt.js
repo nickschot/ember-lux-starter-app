@@ -5,13 +5,11 @@ const assign = Ember.assign || Ember.merge;
 
 export default JWT.extend({
     getAuthenticateData(credentials) {
-        const authentication = {
+        return {
             [this.identificationField]: credentials.identification,
-            [this.passwordField]: credentials.password,
-            ['rememberMe']: credentials.rememberMe
+            [this.passwordField]:       credentials.password,
+            ['rememberMe']:             credentials.rememberMe
         };
-
-        return authentication;
     },
 
     /**
@@ -59,13 +57,13 @@ export default JWT.extend({
             throw new Error('Token is empty. Please check your backend response.');
         }
 
-        const tokenData = this.getTokenData(token);
-        const expiresAt = Ember.get(tokenData, this.tokenExpireName);
-        const userId = Ember.get(tokenData, 'userId');
+        const tokenData       = this.getTokenData(token);
+        const expiresAt       = Ember.get(tokenData, this.tokenExpireName);
+        const userId          = Ember.get(tokenData, 'userId');
         const tokenExpireData = {};
 
         tokenExpireData[this.tokenExpireName] = expiresAt;
-        tokenExpireData['userId'] = userId;
+        tokenExpireData['userId']             = userId;
 
         this.scheduleAccessTokenRefresh(expiresAt, token);
 

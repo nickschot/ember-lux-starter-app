@@ -20,6 +20,9 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+
+      //This should match up with the Lux default pagination size
+      MAX_RESOURCES_PER_PAGE: 25
     },
 
     //TODO: this is temporarily here due to a bug in semantic-ui-ember 2.0.1
@@ -30,8 +33,8 @@ module.exports = function(environment) {
         javascript: true,
         images: false,
         fonts: true
-      },
-    },
+      }
+    }
   };
 
   if (environment === 'development') {
