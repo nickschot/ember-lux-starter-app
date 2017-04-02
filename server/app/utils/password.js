@@ -1,7 +1,7 @@
 import bcrypt from 'bcryptjs';
 
 export function testPasswordStrength(password) {
-    return password.length > 8;
+    return password.length >= 8;
 }
 
 export function hashPassword(password) {

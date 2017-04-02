@@ -77,7 +77,7 @@ class AuthController extends Controller {
 
     async changePassword({
         user: {
-            user
+            userId
         },
         params: {
             data: {
@@ -88,7 +88,7 @@ class AuthController extends Controller {
             }
         }
     }){
-        let userObj = await User.find(user);
+        let userObj = await User.find(userId);
 
         if(await comparePassword(oldPassword, userObj.password) && testPasswordStrength(newPassword)){
             userObj.password = await hashPassword(newPassword);

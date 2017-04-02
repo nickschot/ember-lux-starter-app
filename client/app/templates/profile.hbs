@@ -27,41 +27,17 @@
           </div>
         </div>
       </div>
-
-      <h4 class="ui dividing header">
-        Change password
-      </h4>
-      <div class="ui equal width grid">
-        <div class="column">
-          <div class="field">
-            <label for="profile-new-password">New password</label>
-            {{input type="password" class="form-control" id="profile-new-password"}}
-          </div>
-          <div class="field">
-            <label for="profile-new-password-repeat">New password <i>(repeat)</i></label>
-            {{input type="password" class="form-control" id="profile-new-password-repeat"}}
-          </div>
-        </div>
-        <div class="ui center aligned column">
-          <p>
-            <i>&lt;Some password strength measurer&gt;</i>
-          </p>
-        </div>
-      </div>
-
-      <div class="ui section divider"></div>
-
-      <div class="eight wide field">
-        <label for="profile-current-password">Current password</label>
-        {{input type="password" class="form-control" id="profile-current-password"}}
-      </div>
     </form>
   </div>
-  <div class="ui bottom attached block header">
+  <div class="ui bottom attached block right aligned header">
     {{#if model.hasDirtyAttributes}}
       <button class="ui primary button" {{action 'save'}}>Save</button>
     {{else}}
       <button class="ui primary button" disabled="disabled">Saved</button>
     {{/if}}
   </div>
+
+  <br>
+
+  {{change-password}}
 </div>
