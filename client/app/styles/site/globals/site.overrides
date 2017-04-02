@@ -5,23 +5,15 @@
 // generate classes to be used like 'grey text'
 @text-colors: blue, green, orange, pink, purple, red, teal, yellow, black, grey, white;
 .text {
-    .-(@i: length(@text-colors)) when (@i > 0) {
-        @c: extract(@text-colors, @i);
-        &.@{c} { color: @@c }
-        .-((@i - 1));
-    }.-;
+  .-(@i: length(@text-colors)) when (@i > 0) {
+    @c: extract(@text-colors, @i);
+    &.@{c} { color: @@c }
+    .-((@i - 1));
+  }.-;
 
-    &.left {
-        text-align: left;
-    }
-
-    &.center {
-        text-align: center;
-    }
-
-    &.right {
-        text-align: right;
-    }
+  &.left    { text-align: left; }
+  &.center  { text-align: center; }
+  &.right   { text-align: right; }
 }
 
 // right border on fixed top menu
@@ -32,8 +24,8 @@
 }
 
 .ui.footer {
-    padding-top: 3.5rem;
-    padding-bottom: 3.5rem;
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
 }
 
 @media only screen and (min-width : @tabletBreakpoint) {
