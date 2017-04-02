@@ -3,6 +3,10 @@
 
   {{#link-to 'index' class='item'}}Home{{/link-to}}
 
+  {{#if session.isAuthenticated}}
+    {{#link-to 'protected' class='item'}}Protected Page{{/link-to}}
+  {{/if}}
+
   <div class="right menu">
     {{#if session.isAuthenticated}}
       {{#ui-dropdown class='item' as |execute|}}
