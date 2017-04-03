@@ -13,9 +13,7 @@ A single User model with basic attributes is present in both the server and the 
 [Semantic UI](https://semantic-ui.com/) is available in this package. It is only partially imported by default to keep the file size down. You can change which components you want to import in app/styles/semantic-ui.less.
 
 > #### Note
-> In the current iteration it is necessary to manually run `npm run reload-theme-config` after changing the `app/styles/theme.config` file. This copies the theme file to the correct location: `bower_components/semantic-ui/src/theme.confg`.
-
-> As it uses the `cp` command, this does not currently work on Windows.
+> In the current iteration it is necessary to restart ember-cli (`ember serve`) after changing the `app/styles/theme.config` file. This will the edited theme file to the correct location: `bower_components/semantic-ui/src/theme.confg`.
 
 ---
 

@@ -12,8 +12,7 @@
   "scripts": {
     "build": "ember build",
     "start": "ember server",
-    "test": "ember test",
-    "reload-theme-config": "cp ./app/styles/theme.config ./bower_components/semantic-ui/src/theme.config"
+    "test": "ember test"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
@@ -38,6 +37,7 @@
     "ember-simple-auth": "^1.2.1",
     "ember-simple-auth-token": "^2.1.0",
     "ember-source": "~2.12.0",
+    "fs-extra": "^2.1.2",
     "loader.js": "^4.2.3",
     "semantic-ui-ember": "^2.0.1"
   },
