@@ -44,7 +44,7 @@ module.exports = function(defaults) {
   // along with the exports of each module as its value.
 
   try {
-    fse.copySync('./app/styles/theme.configs', './bower_components/semantic-ui/src/theme.config');
+    fse.copySync('./app/styles/theme.config', './bower_components/semantic-ui/src/theme.config');
     console.log('Successfully copied `./app/styles/theme.config` to `./bower_components/semantic-ui/src/theme.config`'); // eslint-disable-line no-console
   } catch (err) {
     console.error('Failed to copy app/styles/theme.config: ', err); // eslint-disable-line no-console
