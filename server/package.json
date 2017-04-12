@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "",
   "scripts": {
+    "build": "",
     "start": "lux serve",
     "dev": "nf run lux serve",
     "test": "lux test"
