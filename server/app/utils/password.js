@@ -1,29 +1,13 @@
-import bcrypt from 'bcryptjs';
+import bcrypt from 'bcrypt';
 
 export function testPasswordStrength(password) {
     return password.length >= 8;
 }
 
 export function hashPassword(password) {
-    return new Promise((resolve, reject) => {
-        bcrypt.hash(password, 10, (err, hash) => {
-            if (err) {
-                reject(err);
-            }
-
-            resolve(hash);
-        });
-    });
+    return bcrypt.hash(password, 10);
 }
 
 export function comparePassword(password, hash) {
-    return new Promise((resolve, reject) => {
-        bcrypt.compare(password, hash, (err, result) => {
-            if (err) {
-                reject(err);
-            }
-
-            resolve(result);
-        });
-    });
+    return bcrypt.compare(password, hash);
 }
