@@ -1,11 +1,12 @@
-import Ember from 'ember';
+import { computed } from '@ember/object';
+import { inject as service } from '@ember/service';
 import AjaxService from 'ember-ajax/services/ajax';
 import config from '../config/environment';
 
 export default AjaxService.extend({
-    session: Ember.inject.service(),
+    session: service(),
     host: config.host,
-    headers: Ember.computed('session.data.authenticated.token', {
+    headers: computed('session.data.authenticated.token', {
         get() {
             let headers = {
                 'Content-Type': 'application/vnd.api+json'

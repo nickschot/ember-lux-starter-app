@@ -1,8 +1,9 @@
-import Ember from 'ember';
+import { inject as service } from '@ember/service';
+import Component from '@ember/component';
 
-export default Ember.Component.extend({
-  session:        Ember.inject.service('session'),
-  sessionAccount: Ember.inject.service('session-account'),
+export default Component.extend({
+  session:        service('session'),
+  sessionAccount: service('session-account'),
 
   actions: {
     logout() {

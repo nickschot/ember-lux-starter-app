@@ -1,7 +1,10 @@
-import Ember from 'ember';
+import { isEmpty } from '@ember/utils';
+import { get } from '@ember/object';
+import $ from 'jquery';
+import { assign as assignPolyfill, merge as mergePolyfill } from '@ember/polyfills';
 import JWT from 'ember-simple-auth-token/authenticators/jwt';
 
-const assign = Ember.assign || Ember.merge;
+const assign = assignPolyfill || mergePolyfill;
 
 export default JWT.extend({
     getAuthenticateData(credentials) {
@@ -18,7 +21,7 @@ export default JWT.extend({
      @private
      */
     makeRequest(url, data, headers) {
-        return Ember.$.ajax({
+        return $.ajax({
             url: url,
             method: 'POST',
             data: JSON.stringify({
@@ -51,15 +54,15 @@ export default JWT.extend({
      */
 
     handleAuthResponse(response) {
-        const token = Ember.get(response, this.tokenPropertyName);
+        const token = get(response, this.tokenPropertyName);
 
-        if (Ember.isEmpty(token)) {
+        if (isEmpty(token)) {
             throw new Error('Token is empty. Please check your backend response.');
         }
 
         const tokenData       = this.getTokenData(token);
-        const expiresAt       = Ember.get(tokenData, this.tokenExpireName);
-        const userId          = Ember.get(tokenData, 'userId');
+        const expiresAt       = get(tokenData, this.tokenExpireName);
+        const userId          = get(tokenData, 'userId');
         const tokenExpireData = {};
 
         tokenExpireData[this.tokenExpireName] = expiresAt;

@@ -1,16 +1,18 @@
-import Ember from 'ember';
+import { isEmpty } from '@ember/utils';
+import { Promise as EmberPromise } from 'rsvp';
+import Service, { inject as service } from '@ember/service';
 
-export default Ember.Service.extend({
-  session:  Ember.inject.service('session'),
-  store:    Ember.inject.service(),
+export default Service.extend({
+  session:  service('session'),
+  store:    service(),
 
   user: null,
 
   loadCurrentUser() {
-    return new Ember.RSVP.Promise((resolve, reject) => {
+    return new EmberPromise((resolve, reject) => {
       const userId = this.get('session.data.authenticated.userId');
 
-      if (!Ember.isEmpty(userId)) {
+      if (!isEmpty(userId)) {
         this.get('store').find('user', userId)
           .then((user) => {
             this.set('user', user);
