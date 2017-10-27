@@ -11,14 +11,14 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "babel-core": "6.24.1",
+    "babel-core": "~6.26.0",
     "babel-preset-lux": "2.0.2",
-    "bcrypt": "^1.0.2",
+    "bcrypt": "~1.0.3",
     "knex": "0.13.0",
-    "lux-framework": "1.2.0",
-    "lux-jwt": "^0.3.0",
+    "lux-framework": "1.2.2",
+    "lux-jwt": "^1.0.0",
     "lux-unless": "^0.1.1",
-    "sqlite3": "3.1.8"
+    "sqlite3": "~3.1.13"
   },
   "engines": {
     "node": ">= 6.0"
