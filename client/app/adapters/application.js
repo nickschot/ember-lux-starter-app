@@ -1,10 +1,10 @@
+import { inject as service } from '@ember/service';
 import DS from 'ember-data';
 import config from '../config/environment';
 import DataAdapterMixin from 'ember-simple-auth/mixins/data-adapter-mixin';
-import Ember from 'ember';
 
 export default DS.JSONAPIAdapter.extend(DataAdapterMixin, {
-  session:      Ember.inject.service(),
+  session:      service(),
 
   authorizer:   config['ember-simple-auth'].authorizer,
   host:         config.host,
